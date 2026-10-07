@@ -1,28 +1,39 @@
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/mpd-logo.png"
+import '../styles/navbar.css';
 
 function Navbar() {
   return (
     <header className="">
       <nav className="flex pt-2">
-        <div className="flex grow justify-between bg-[#74C29D] text-white font-medium rounded-4xl items-center px-6 mx-4">
+        <div className="flex grow justify-between bg-[#74C29D] text-white rounded-4xl items-center px-6 mx-4">
 
           {/*===============MENU===============*/}
-          <div className="flex gap-3" >
+          <div className="navbar-menu flex gap-3 font-normal items-center" >
             <NavLink to="/">
-              Beranda
+            {({ isActive }) => (
+              <span className={isActive === true ? "active" : ""}>Beranda</span>
+            )}
             </NavLink>
             <NavLink to="/jadwal-kajian">
-              Jadwal Kajian
+            {({ isActive }) => (
+              <span className={isActive === true ? "active" : ""}>Jadwal Kajian</span>
+            )}
             </NavLink>
             <NavLink to="/kegiatan">
-              Kegiatan
+            {({ isActive }) => (
+              <span className={isActive === true ? "active" : ""}>Kegiatan</span>
+            )}
             </NavLink>
             <NavLink to="/infaq">
-              Infaq
+            {({ isActive }) => (
+              <span className={isActive === true ? "active" : ""}>Infaq</span>
+            )}
             </NavLink>
             <NavLink to="/tentang">
-              Tentang MPD
+            {({ isActive }) => (
+              <span className={isActive === true ? "active" : ""}>Tentang MPD</span>
+            )}
             </NavLink>
           </div>
 
@@ -36,7 +47,7 @@ function Navbar() {
         </div>
 
         {/*===============LOGO===============*/}
-        <div className="mr-2">
+        <div className="mr-2 font-medium">
           <NavLink to="/">
             <img 
               className="w-15"
@@ -49,4 +60,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
